@@ -44,6 +44,7 @@ function run(){
     //li.remove();
 
     // Drag&Dropされたファイルの処理
+    /*
     minuend.bind("dragover", (e) => {
 	return false;
     }).bind("dragend", (e) => {
@@ -54,6 +55,26 @@ function run(){
 	let dt = e.originalEvent.dataTransfer
 	let li = $('<li>').appendTo(minuendlist)
 	let a = $('<a>').appendTo(li)
+	if(dt.files[0]){ // ファイルのD&D
+	    a.text(dt.files[0].name)
+	    a.attr('href','http://example.com')
+	}
+	else {
+	    var url = dt.getData("URL")
+	    a.text(url)
+	    a.attr('href',url)
+	}
+    })
+    */
+    minuend.on("dragover", (e) => { return false } )
+    minuend.on("dragend", (e) => { return false; } )
+    minuend.on("drop", (e) => {
+	e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
+	//console.log(e.originalEvent.dataTransfer)
+	let dt = e.originalEvent.dataTransfer
+	let li = $('<li>').appendTo(minuendlist)
+	let a = $('<a>').appendTo(li)
+	a.attr('class','list')
 	if(dt.files[0]){ // ファイルのD&D
 	    a.text(dt.files[0].name)
 	    a.attr('href','http://example.com')
