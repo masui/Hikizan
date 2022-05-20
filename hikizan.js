@@ -22,15 +22,13 @@ function runx(){
 }
 
 function handleDDFile(file){
-    //alert(file.name)
-    //console.log(file)
-
     var li = $('<li>').appendTo(minuendlist)
     var a = document.createElement('a')
     a.href = 'http://example.com'
-    a.innerHTML = file.name
-    li.append(a)
-    minuendlist.append(li);
+    console.log(file)
+    //a.innerHTML = file.name
+    //li.append(a)
+    //minuendlist.append(li);
 }
 
 function run(){
@@ -52,8 +50,19 @@ function run(){
 	return false;
     }).bind("drop", (e) => {
 	e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
-	files = e.originalEvent.dataTransfer.files;
-	handleDDFile(files[0]);
+	//console.log(e.originalEvent.dataTransfer)
+	let dt = e.originalEvent.dataTransfer
+	let li = $('<li>').appendTo(minuendlist)
+	let a = $('<a>').appendTo(li)
+	if(dt.files[0]){ // ファイルのD&D
+	    a.text(dt.files[0].name)
+	    a.attr('href','http://example.com')
+	}
+	else {
+	    var url = dt.getData("URL")
+	    a.text(url)
+	    a.attr('href',url)
+	}
     })
     
     $('body').bind("dragover", function(e){
