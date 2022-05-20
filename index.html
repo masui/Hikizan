@@ -2,6 +2,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>引算.org</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="hikizan.js"></script>
+    <script type="text/javascript">
+      $(function() {
+	  run();
+      });
+    </script>
   </head>
   <body>
     <h1>引算サイト</h1>
@@ -18,7 +25,7 @@
       <textarea id="minuend" cols=60 rows=5 placeholder="引かれるデータを入力するか、ファイルやURLをDrag&Dropしてください"></textarea>
     </blockquote>
 
-    <ul>
+    <ul id="minuendlist">
       <li>http://example.com/</li>
     </ul>
     
@@ -33,11 +40,5 @@
     <blockquote>
       <textarea id="difference" cols=60 rows=5></textarea>
     </blockquote>
-
-    <script type="text/javascript">
-      var difference = document.getElementById('difference')
-      difference.value = "AAAA"
-    </script>
-    
   </body>
 </html>
