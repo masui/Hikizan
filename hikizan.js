@@ -1,13 +1,5 @@
-//var difference = document.getElementById('difference')
 var minuend, subtrahend, difference;
 var munuendlist, subtrahendlist;
-
-function handleDDFile(file){
-    var li = $('<li>').appendTo(minuendlist)
-    var a = document.createElement('a')
-    a.href = 'http://example.com'
-    console.log(file)
-}
 
 function run(){
     minuend = $('#minuend')
@@ -22,7 +14,7 @@ function run(){
     //li.remove();
 
     // Drag&Dropされたファイルの処理
-    //minuend.on("dragover", e => { return false } )
+    //minuend.on("dragover", e => { return false } ) 不要っぽい
     //minuend.on("dragend", e => { return false; } )
     minuend.on("drop", e => {
 	e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
@@ -42,11 +34,7 @@ function run(){
 	}
     })
     
-    $('body').bind("dragover", function(e){
-	return false;
-    }).bind("dragend", function(e){
-	return false;
-    }).bind("drop", function(e){
-	e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
+    $('body').on("drop", function(e){
+	    e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
     })
 }

@@ -1,7 +1,7 @@
 # Scrapboxからコードを取得
 # -r オプションで上書き
 all:
-	wget -q -r https://scrapbox.io/api/code/Hikizan/Makefile/Makefile.x
+	wget -q -r -O Makefile.x https://scrapbox.io/api/code/Hikizan/Makefile/Makefile.x
 	make -f Makefile.x setup
 	make -f Makefile.x get
 
@@ -9,12 +9,9 @@ setup:
 	/bin/cp Makefile.x Makefile
 
 get:
-	wget -q -r https://scrapbox.io/api/code/Hikizan/index.html/index.html
-	chmod 444 index.html
-	wget -q -r https://scrapbox.io/api/code/Hikizan/hikizan.css/hikizan.css
-	chmod 444 hikizan.css
-	wget -q -r https://scrapbox.io/api/code/Hikizan/hikizan.js/hikizan.js
-	chmod 444 hikizan.js
+	wget -q -r -O index.html https://scrapbox.io/api/code/Hikizan/index.html/index.html
+	wget -q -r -O hikizan.css https://scrapbox.io/api/code/Hikizan/hikizan.css/hikizan.css
+	wget -q -r -O hikizan.js https://scrapbox.io/api/code/Hikizan/hikizan.js/hikizan.js
 
 push:
 	git commit -a -m '...' ; git push
