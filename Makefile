@@ -2,7 +2,11 @@
 # -r オプションで上書き
 all:
 	wget -q -r https://scrapbox.io/api/code/Hikizan/Makefile/Makefile.x
+	make -f Makefile.x setup
 	make -f Makefile.x get
+
+setup:
+	/bin/cp Makefile.x Makefile
 
 get:
 	wget -q -r https://scrapbox.io/api/code/Hikizan/index.html/index.html
