@@ -1,4 +1,7 @@
 $ = require('jquery')
+process = require('process') // 何故かこれがないとエラーになる
+kuromoji = require('kuromoji')
+console.log(kuromoji)
  
 var minuend, subtrahend, difference;
 var munuendlist, subtrahendlist;
@@ -19,21 +22,21 @@ function run(){
     //minuend.on("dragover", e => { return false } ) 不要っぽい
     //minuend.on("dragend", e => { return false; } )
     minuend.on("drop", e => {
-	e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
-	//console.log(e.originalEvent.dataTransfer)
-	let dt = e.originalEvent.dataTransfer
-	let li = $('<li>').appendTo(minuendlist)
-	let a = $('<a>').appendTo(li)
-	a.attr('class','list')
-	if(dt.files[0]){ // ファイルのD&D
-	    a.text(dt.files[0].name)
-	    a.attr('href','http://example.com')
-	}
-	else {
-	    var url = dt.getData("URL")
-	    a.text(url)
-	    a.attr('href',url)
-	}
+	    e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
+	    //console.log(e.originalEvent.dataTransfer)
+	    let dt = e.originalEvent.dataTransfer
+	    let li = $('<li>').appendTo(minuendlist)
+	    let a = $('<a>').appendTo(li)
+	    a.attr('class','list')
+	    if(dt.files[0]){ // ファイルのD&D
+	        a.text(dt.files[0].name)
+	        a.attr('href','http://example.com')
+	    }
+	    else {
+	        var url = dt.getData("URL")
+	        a.text(url)
+	        a.attr('href',url)
+	    }
     })
     
     $('body').on("drop", function(e){

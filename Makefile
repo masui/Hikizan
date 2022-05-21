@@ -12,6 +12,8 @@ get:
 	wget -q -r -O index.html https://scrapbox.io/api/code/Hikizan/index.html/index.html
 	wget -q -r -O hikizan.css https://scrapbox.io/api/code/Hikizan/hikizan.css/hikizan.css
 	wget -q -r -O hikizan.js https://scrapbox.io/api/code/Hikizan/hikizan.js/hikizan.js
+	wget -q -r -O webpack.config.js https://scrapbox.io/api/code/Hikizan/webpack.config.js/webpack.config.js
+	webpack
 
 push:
 	git commit -a -m '...' ; git push
