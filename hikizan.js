@@ -1,3 +1,5 @@
+$ = require('jquery')
+ 
 var minuend, subtrahend, difference;
 var munuendlist, subtrahendlist;
 
@@ -38,3 +40,8 @@ function run(){
 	    e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
     })
 }
+
+
+$(function(){
+    run()
+})
