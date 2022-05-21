@@ -1,13 +1,11 @@
 body {
     background-color: #ffd;
 }
-
 a:link { color: #0000f0 ; }
 a:visited { color: #0000f0 ; }
 a {
     text-decoration: none;
 }
-      
 .list {
     background-color: #ff0;
 }
