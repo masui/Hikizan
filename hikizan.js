@@ -1,9 +1,7 @@
-$ = require('jquery')
-
 var minuend, subtrahend, difference;
 var munuendlist, subtrahendlist;
 
-function runxxxx(){
+function run(){
     minuend = $('#minuend')
     subtrahend = $('#subtrahend')
     difference = $('#difference')
