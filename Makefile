@@ -19,5 +19,5 @@ run:
 # MacでApacheうごかしてテスト
 # $ cd /Library/WebServer/Documents/; ln -s ~/Hikizan
 # $ sudo apachectl start
-#
-#	open http://localhost/Hikizan/
+local:
+	open http://localhost/Hikizan/
