@@ -1,9 +1,8 @@
 $ = require('jquery')
 process = require('process') // 何故かこれがないとエラーになる
 kuromoji = require('kuromoji')
-alert(__dirname + "/node_modules/kuromoji/dict/")
 
-kuromoji.builder({ dicPath: "node_modules/kuromoji/dict/" }).build(function (error, tokenizer) {
+kuromoji.builder({ dicPath: "dict/" }).build(function (error, tokenizer) {
      var path = tokenizer.tokenize("私の名前は増井です");
     console.log(path);
 });
