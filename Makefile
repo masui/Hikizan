@@ -3,7 +3,7 @@
 all:
 	wget -q -r -O Makefile.x https://scrapbox.io/api/code/Hikizan/Makefile/Makefile.x
 	make -f Makefile.x setup
-	make -f Makefile.x get
+	make -f Makefile get
 
 setup:
 	/bin/cp Makefile.x Makefile
@@ -20,4 +20,8 @@ push:
 	git commit -a -m '...' ; git push
 
 run:
-	open index.html
+	open http://localhost/Hikizan/
+#	open index.html
+
+copy:
+	cp -r hikizan.css hikizan.js index.html bundle.js dict /Library/WebServer/Documents/Hikizan
