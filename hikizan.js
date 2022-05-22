@@ -8,9 +8,10 @@ function run(){
 
     // 差分領域をクリックすると差分計算してリストを表示する
     difference.on('click', ()=> {
-        //var s = minuend.val().split(/\s/)
+        console.log("clicked")
         var a = {}
         kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict/" }).build(function (error, tokenizer) {
+           console.log("Start kuromoji")
            var path = tokenizer.tokenize(minuend.val());
            console.log(path)
            for(var i=0; i < path.length; i++){
