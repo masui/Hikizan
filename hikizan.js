@@ -17,10 +17,23 @@ function run(){
     difference = $('#difference')
 
     difference.on('click', ()=> {
-        a = minuend.val().split(/\s/)
+        //var s = minuend.val().split(/\s/)
+        var a = {}
         kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict/" }).build(function (error, tokenizer) {
            var path = tokenizer.tokenize(minuend.val());
-           console.log(path);
+           console.log(path)
+           for(var i=0; i < path.length; i++){
+               a[path[i].surface_form] = 1
+           }
+           path = tokenizer.tokenize(subtrahend.val());
+           for(var i=0; i < path.length; i++){
+               delete a[path[i].surface_form]
+           }
+           delete a['*']
+           delete a[' ']
+           delete a['\n']
+           var words = Object.keys(a)
+           difference.val(words.join(', '))
         });
     });
     
