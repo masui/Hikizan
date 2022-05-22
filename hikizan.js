@@ -16,7 +16,14 @@ function run(){
     subtrahend = $('#subtrahend')
     difference = $('#difference')
 
-    difference.on('click', ()=> alert(100))
+    difference.on('click', ()=> {
+        a = minuend.val().split(/\s/)
+        kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict/" }).build(function (error, tokenizer) {
+           var path = tokenizer.tokenize(minuend.val());
+           console.log(path);
+        });
+    });
+    
     
     minuendlist = $('#minuendlist')
     li = $('<li>').appendTo(minuendlist)

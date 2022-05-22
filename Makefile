@@ -2,6 +2,9 @@
 # -r オプションで上書き
 all:
 	wget -q -r -O Makefile https://scrapbox.io/api/code/Hikizan/Makefile/Makefile
+	make get
+
+get:
 	wget -q -r -O index.html https://scrapbox.io/api/code/Hikizan/index.html/index.html
 	wget -q -r -O hikizan.css https://scrapbox.io/api/code/Hikizan/hikizan.css/hikizan.css
 	wget -q -r -O hikizan.js https://scrapbox.io/api/code/Hikizan/hikizan.js/hikizan.js
@@ -10,11 +13,11 @@ all:
 push:
 	git commit -a -m '...' ; git push
 
-#
+run:
+	open index.html
+
 # MacでApacheうごかしてテスト
 # $ cd /Library/WebServer/Documents/; ln -s ~/Hikizan
 # $ sudo apachectl start
 #
-run:
-	open index.html
 #	open http://localhost/Hikizan/
