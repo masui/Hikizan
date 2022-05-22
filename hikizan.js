@@ -2,11 +2,9 @@ $ = require('jquery')
 process = require('process') // 何故かこれがないとエラーになる
 kuromoji = require('kuromoji')
 
-// これでうまくいった!
-var dict = "dict/"
-//if(location.href.match('file:')){ dict = "file:///Users/masui/Hikizan/node_modules/kuromoji/dict/" } // これはうまくいかない...
-kuromoji.builder({ dicPath: dict }).build(function (error, tokenizer) {
-     var path = tokenizer.tokenize("私の名前は増井です");
+// kuromojiテスト
+kuromoji.builder({ dicPath: "dict/" }).build(function (error, tokenizer) {
+    var path = tokenizer.tokenize("私の名前は増井です");
     console.log(path);
 });
  
@@ -39,7 +37,7 @@ function run(){
 	        a.text(dt.files[0].name)
 	        a.attr('href','http://example.com')
 	    }
-	    else {
+	    else { // URLのD&D
 	        var url = dt.getData("URL")
 	        a.text(url)
 	        a.attr('href',url)

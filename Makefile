@@ -19,9 +19,11 @@ get:
 push:
 	git commit -a -m '...' ; git push
 
+#
+# MacでApacheうごかしてテスト
+# $ cd /Library/WebServer/Documents/; ln -s ~/Hikizan
+# $ sudo apachectl start
+#
 run:
 	open http://localhost/Hikizan/
-#	open index.html
-
-copy:
-	cp -r hikizan.css hikizan.js index.html bundle.js dict /Library/WebServer/Documents/Hikizan
+ 
