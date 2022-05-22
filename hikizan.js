@@ -1,13 +1,3 @@
-//$ = require('jquery')
-//process = require('process') // 何故かこれがないとエラーになる
-//kuromoji = require('kuromoji')
-
-// kuromojiテスト
-//kuromoji.builder({ dicPath: "dict/" }).build(function (error, tokenizer) {
-//    var path = tokenizer.tokenize("私の名前は増井です");
-//    console.log(path);
-//});
- 
 var minuend, subtrahend, difference;
 var munuendlist, subtrahendlist;
 

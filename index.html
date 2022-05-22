@@ -2,17 +2,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>引算.org</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/build/kuromoji.js"></script>
     <script src="hikizan.js"></script>
     <link rel="stylesheet" href="./hikizan.css" type="text/css">
     <script type="text/javascript">
       //  初期化コード
       $(function() {
-    	  kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict/" }).build(function (error, tokenizer) {
-    	      var path = tokenizer.tokenize("私の名前は増井です");
-    	      console.log(path);
-          });
           run()
       })
     </script>
