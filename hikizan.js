@@ -16,6 +16,7 @@ function run(){
     subtrahend = $('#subtrahend')
     difference = $('#difference')
 
+    // 差分領域をクリックすると差分計算してリストを表示する
     difference.on('click', ()=> {
         //var s = minuend.val().split(/\s/)
         var a = {}
