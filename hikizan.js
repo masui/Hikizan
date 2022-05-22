@@ -1,7 +1,7 @@
 $ = require('jquery')
 process = require('process') // 何故かこれがないとエラーになる
 kuromoji = require('kuromoji')
-console.log(kuromoji)
+alert(kuromoji)
  
 var minuend, subtrahend, difference;
 var munuendlist, subtrahendlist;
