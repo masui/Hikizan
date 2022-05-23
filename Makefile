@@ -22,6 +22,7 @@ run:
 local:
 	open http://localhost/Hikizan/
 
+# pitecan.comに置いて実験
 upload:
 	scp -r index.html hikizan.css hikizan.js dict pitecan.com:/www/www.pitecan.com/Hikizan
 pitecan:
