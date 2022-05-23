@@ -2,20 +2,17 @@ var minuend, subtrahend, difference;
 var munuendlist, subtrahendlist;
 
 function run(){
-    minuend = $('#minuend')
-    subtrahend = $('#subtrahend')
-    difference = $('#difference')
+    minuend = $('#minuend')       // 減算されるデータのtextarea
+    subtrahend = $('#subtrahend') // 減算するデータのtextarea
+    difference = $('#difference') // 減算結果(差分)を表示するtextarea
 
     // 差分領域をクリックすると差分計算してリストを表示する
     difference.on('click', ()=> {
-        console.log("clicked")
         var a = {}
         // pitecan.comやlocalhostでは以下の方法で動くのに、GitHub Pagesのhikizan.orgでは何故か失敗する
         // kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict" }).build(function (error, tokenizer) {
         // 仕方がないのでdictファイルもサイトに置いたらhikizan.orgで動いた 2022/5/23 11:10
         kuromoji.builder({ dicPath: "./dict" }).build(function (error, tokenizer) {
-           console.log("Start kuromoji")
-           console.log(`val = ${minuend.val()}`)
            var path = tokenizer.tokenize(minuend.val());
            console.log(path)
            for(var i=0; i < path.length; i++){
@@ -33,7 +30,8 @@ function run(){
         });
     });
     
-    
+    /*
+    // URLやデータファイルをDrag&Dropで指定する予定 (未実装 2022/5/23)
     minuendlist = $('#minuendlist')
     li = $('<li>').appendTo(minuendlist)
     $('<a>').text('aaaa').attr('href','http://example.com').appendTo(li)
@@ -63,6 +61,7 @@ function run(){
     $('body').on("drop", function(e){
 	    e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
     })
+    */
 }
 
 $(function() {
