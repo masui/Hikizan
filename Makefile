@@ -21,3 +21,9 @@ run:
 # $ sudo apachectl start
 local:
 	open http://localhost/Hikizan/
+
+upload:
+	scp index.html hikizan.css hikizan.js pitecan.com:/www/www.pitecan.com/Hikizan
+pitecan:
+	open http://pitecan.com/Hikizan
+	
