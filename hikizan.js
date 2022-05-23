@@ -13,15 +13,14 @@ function run(){
         // kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict" }).build(function (error, tokenizer) {
         // 仕方がないのでdictファイルもサイトに置いたらhikizan.orgで動いた 2022/5/23 11:10
         kuromoji.builder({ dicPath: "./dict" }).build(function (error, tokenizer) {
-           var path = tokenizer.tokenize(minuend.val());
-           console.log(path)
-           for(var i=0; i < path.length; i++){
-               a[path[i].surface_form] = 1
-           }
-           path = tokenizer.tokenize(subtrahend.val());
-           for(var i=0; i < path.length; i++){
-               delete a[path[i].surface_form]
-           }
+           var path = tokenizer.tokenize(minuend.val())
+           path.forEach(element => {
+               a[element.surface_form] = 1
+           })
+           path = tokenizer.tokenize(subtrahend.val())
+           path.forEach(element => {
+               delete a[element.surface_form]
+           })
            delete a['*']
            delete a[' ']
            delete a['\n']
