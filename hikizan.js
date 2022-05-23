@@ -10,7 +10,9 @@ function run(){
     difference.on('click', ()=> {
         console.log("clicked")
         var a = {}
-        //kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict" }).build(function (error, tokenizer) {
+        // pitecan.comやlocalhostでは以下の方法で動くのに、GitHub Pagesのhikizan.orgでは何故か失敗する
+        // kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict" }).build(function (error, tokenizer) {
+        // 仕方がないのでdictファイルもサイトに置いたらhikizan.orgで動いた 2022/5/23 11:10
         kuromoji.builder({ dicPath: "./dict" }).build(function (error, tokenizer) {
            console.log("Start kuromoji")
            console.log(`val = ${minuend.val()}`)
@@ -62,3 +64,7 @@ function run(){
 	    e.preventDefault();  //  デフォルトの「ファイルを開く」処理を抑制
     })
 }
+
+$(function() {
+   run()
+})
