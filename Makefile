@@ -23,7 +23,7 @@ local:
 	open http://localhost/Hikizan/
 
 upload:
-	scp index.html hikizan.css hikizan.js pitecan.com:/www/www.pitecan.com/Hikizan
+	scp -r index.html hikizan.css hikizan.js dict pitecan.com:/www/www.pitecan.com/Hikizan
 pitecan:
 	open http://pitecan.com/Hikizan
 	

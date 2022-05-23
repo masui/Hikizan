@@ -10,7 +10,8 @@ function run(){
     difference.on('click', ()=> {
         console.log("clicked")
         var a = {}
-        kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict" }).build(function (error, tokenizer) {
+        //kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict" }).build(function (error, tokenizer) {
+        kuromoji.builder({ dicPath: "./dict" }).build(function (error, tokenizer) {
            console.log("Start kuromoji")
            console.log(`val = ${minuend.val()}`)
            var path = tokenizer.tokenize(minuend.val());
