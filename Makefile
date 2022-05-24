@@ -27,4 +27,9 @@ upload:
 	scp -r index.html hikizan.css hikizan.js dict pitecan.com:/www/www.pitecan.com/Hikizan
 pitecan:
 	open http://pitecan.com/Hikizan
-	
+
+# Cypressを使ったテスト
+test:
+	npx cypress run -s cypress/integration/hikizan.js
+test-gui:
+	npx cypress open
