@@ -9,6 +9,7 @@ get:
 	wget -q -r -O hikizan.css https://scrapbox.io/api/code/Hikizan/hikizan.css/hikizan.css
 	wget -q -r -O hikizan.js https://scrapbox.io/api/code/Hikizan/hikizan.js/hikizan.js
 	wget -q -r -O README.md https://scrapbox.io/api/code/Hikizan/README.md/README.md
+	wget -q -r -O cypress/integration/hikizan.js https://scrapbox.io/api/code/Hikizan/Test/hikizan.js
 
 push:
 	git commit -a -m '...' ; git push
