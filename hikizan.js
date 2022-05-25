@@ -17,20 +17,24 @@ function run(){
            path.forEach(element => {
                a[element.surface_form] = 1
            })
+
            // 辞書を引算するような場合にkuromojiを適用しないことにする
-           var subdata = subtrahend.val()
-           var words = subdata.split("\n")
            var usekuromoji = false
-           words.forEach(element => {
-               if(element.length > 10){
-                    usekuromoji = true
-               }
-               delete a[element]
+           var subdata = subtrahend.val()
+           var lines = subdata.split("\n")
+           lines.forEach(line => {
+               words = line.split(/\s+/)
+               words.forEach(word => {
+                   if(word.length > 10){
+                        usekuromoji = true
+                   }
+                   delete a[word]
+               })
            })
            if(usekuromoji){
                path = tokenizer.tokenize(subdata)
-               path.forEach(element => {
-                   delete a[element.surface_form]
+               path.forEach(word => {
+                   delete a[word.surface_form]
                })
            }
            delete a['*']
