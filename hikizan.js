@@ -8,6 +8,7 @@ function run(){
 
     // 差分領域をクリックすると差分計算してリストを表示する
     difference.on('click', ()=> {
+        $('#difference').css('background-color','#eee')
         var a = {}
         // pitecan.comやlocalhostでは以下の方法で動くのに、GitHub Pagesのhikizan.orgでは何故か失敗する
         // kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict" }).build(function (error, tokenizer) {
@@ -42,6 +43,7 @@ function run(){
            delete a['\n']
            var words = Object.keys(a)
            difference.val(words.join(', '))
+           $('#difference').css('background-color','#fff')
         });
     });
     
