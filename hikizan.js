@@ -17,10 +17,22 @@ function run(){
            path.forEach(element => {
                a[element.surface_form] = 1
            })
-           path = tokenizer.tokenize(subtrahend.val())
-           path.forEach(element => {
-               delete a[element.surface_form]
+           // 辞書を引算するような場合にkuromojiを適用しないことにする
+           var subdata = subtrahend.val()
+           var words = subdata.split("\n")
+           var usekuromoji = false
+           words.forEach(element => {
+               if(element.length > 10){
+                    usekuromoji = true
+               }
+               delete a[element]
            })
+           if(usekuromoji){
+               path = tokenizer.tokenize(subdata)
+               path.forEach(element => {
+                   delete a[element.surface_form]
+               })
+           }
            delete a['*']
            delete a[' ']
            delete a['\n']
