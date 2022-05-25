@@ -22,16 +22,21 @@ function run(){
            // 辞書を引算するような場合にkuromojiを適用しないことにする
            var usekuromoji = false
            var subdata = subtrahend.val()
-           var lines = subdata.split("\n")
-           lines.forEach(line => {
-               words = line.split(/\s+/)
-               words.forEach(word => {
-                   if(word.length > 10){
-                        usekuromoji = true
-                   }
-                   delete a[word]
+           if(subdata.length < 10000){
+               usekuromoji = true
+           }
+           else {
+               var lines = subdata.split("\n")
+               lines.forEach(line => {
+                   words = line.split(/\s+/)
+                   words.forEach(word => {
+                       if(word.length > 10){
+                            usekuromoji = true
+                       }
+                       delete a[word]
+                   })
                })
-           })
+           }
            if(usekuromoji){
                path = tokenizer.tokenize(subdata)
                path.forEach(word => {

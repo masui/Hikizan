@@ -2,8 +2,9 @@
 // Hikizan.orgのテスト
 //
 
-const URL = 'https://hikizan.org/'
-
+//const URL = 'https://hikizan.org/'
+const URL = 'http://localhost/Hikizan/'
+   
 describe('Hikizan.orgのテスト', () => {
     it('Hikizan.orgにアクセス', () => {
         cy.visit(URL) // hikizan.orgサイトに移動
@@ -17,11 +18,11 @@ describe('Hikizan.orgのテスト', () => {
 	        .clear()
 	        .type('増井の')
 	        .should('have.value', '増井の') // 手入力をチェック
-
+        
         cy.get('#difference').click()
         cy.get('#difference')
 	        .should('have.value', '変換')
-
+        /*
         cy.get('#subtrahend')
 	        .clear()
 	        .type('変換の')
@@ -30,6 +31,7 @@ describe('Hikizan.orgのテスト', () => {
         cy.get('#difference').click()
         cy.get('#difference')
 	        .should('have.value', '増井')
+	    */
     })
 })
 
