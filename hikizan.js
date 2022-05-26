@@ -14,16 +14,16 @@ function run(){
         // kuromoji.builder({ dicPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict" }).build(function (error, tokenizer) {
         // 仕方がないのでdictファイルもサイトに置いたらhikizan.orgで動いた 2022/5/23 11:10
         kuromoji.builder({ dicPath: "./dict" }).build(function (error, tokenizer) {
-           var path = tokenizer.tokenize(minuend.val())
-           path.forEach(element => {
-               a[element.surface_form] = 1
+           var tokens = tokenizer.tokenize(minuend.val())
+           tokens.forEach(word => {
+               a[word.surface_form] = 1
            })
 
            // 辞書を引算するような場合にkuromojiを適用しないことにする
-           var usekuromoji = false
+           var use_kuromoji = false
            var subdata = subtrahend.val()
            if(subdata.length < 10000){
-               usekuromoji = true
+               use_kuromoji = true
            }
            else {
                var lines = subdata.split("\n")
@@ -31,23 +31,24 @@ function run(){
                    words = line.split(/\s+/)
                    words.forEach(word => {
                        if(word.length > 10){
-                            usekuromoji = true
+                            use_kuromoji = true
                        }
                        delete a[word]
                    })
                })
            }
-           if(usekuromoji){
-               path = tokenizer.tokenize(subdata)
-               path.forEach(word => {
+           
+           if(use_kuromoji){
+               tokens = tokenizer.tokenize(subdata)
+               tokens.forEach(word => {
                    delete a[word.surface_form]
                })
            }
            delete a['*']
            delete a[' ']
            delete a['\n']
-           var words = Object.keys(a)
-           difference.val(words.join(', '))
+           var results = Object.keys(a)
+           difference.val(results.join(', '))
            $('#difference').css('background-color','#fff')
         });
     });
