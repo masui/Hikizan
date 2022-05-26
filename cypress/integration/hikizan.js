@@ -8,6 +8,9 @@ const URL = 'https://hikizan.org/'
 describe('Hikizan.orgのテスト', () => {
     it('Hikizan.orgにアクセス', () => {
         cy.visit(URL) // hikizan.orgサイトに移動
+        
+        console.log(cy.request('/data/test.txt').its('body'))
+        
         cy.get('#minuend')
 	        .should('have.value', '引かれるテキストをここに書いてみてください。') // デフォルト値をチェック
 	        .clear()
