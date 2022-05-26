@@ -34,3 +34,6 @@ test:
 	npx cypress run -s cypress/integration/hikizan.js
 test-gui:
 	npx cypress open
+
+lint:
+	eslint hikizan.js
