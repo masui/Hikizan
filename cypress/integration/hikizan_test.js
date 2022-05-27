@@ -29,14 +29,13 @@ describe('Hikizan.orgのテスト', () => {
       .clear()
       .type('変換の')
       .should('have.value', '変換の') // 手入力をチェック
- 
+
     cy.get('#minuend')
       .clear()
       .type('増井xyzミッション')
     cy.get('#subtrahend')
       .invoke('val', gictionary.data) // テキストをペースト
       .should('have.value', gictionary.data)
-
     cy.get('#difference')
       .click()
       .should('have.value', 'xyz')
