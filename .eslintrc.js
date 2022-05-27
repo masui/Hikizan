@@ -14,6 +14,9 @@ module.exports = {
     },
     "globals": {
         "$": false,
-        "kuromoji": false
+        "kuromoji": false,
+	"cy": false,
+	"describe": false,
+	"it": false
     }
 }
