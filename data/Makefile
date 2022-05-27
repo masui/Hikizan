@@ -10,4 +10,4 @@ SFCHelp.txt: SFCHelp.json
 
 clean:
 	/bin/rm -f *~
-	/bin/rm gictionary.js gictionary.txt SFCHelp.txt
+	/bin/rm -f gictionary.js gictionary.txt SFCHelp.txt
