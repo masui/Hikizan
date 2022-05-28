@@ -9,3 +9,6 @@ a {
 .list {
     background-color: #ff0;
 }
+textarea {
+  width: 98%;
+}
