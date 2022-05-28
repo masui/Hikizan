@@ -39,3 +39,6 @@ test-gui:
 lint:
 	eslint hikizan.js
 	eslint cypress/integration/hikizan_test.js
+
+htmlcheck:
+	open 'https://validator.w3.org/nu/?doc=https%3A%2F%2Fhikizan.org&submit=Check'
