@@ -1,5 +1,6 @@
 # Scrapboxからコードを取得
-# -r オプションで上書き
+# wgetは-r オプションで上書き
+#
 all:
 	wget -q -r -O Makefile https://scrapbox.io/api/code/Hikizan/Makefile/Makefile
 	make get
