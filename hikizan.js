@@ -16,7 +16,10 @@ function run () {
       console.log(error) // ESLint対策
       let tokens = tokenizer.tokenize(minuend.val())
       tokens.forEach(word => {
-        a[word.surface_form] = 1
+        let w = word.surface_form
+        if(! w.match(/^\d+$/) && ! w.match(/^[a-z]+$/)){
+          a[w] = 1
+        }
       })
 
       // 辞書を引算するような場合にkuromojiを適用しないことにする
