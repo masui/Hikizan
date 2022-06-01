@@ -18,6 +18,8 @@ function run () {
     delete a['*']
     delete a[' ']
     delete a['\n']
+    delete a['「']
+    delete a['」']
     const results = Object.keys(a)
     difference.val(results.join(', '))
     $('#difference').css('background-color', '#fff')
