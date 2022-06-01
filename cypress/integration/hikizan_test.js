@@ -12,12 +12,12 @@ describe('Hikizan.orgのテスト', () => {
     cy.visit(URL) // hikizan.orgサイトに移動
 
     cy.get('#minuend')
-      .should('have.value', '引かれるテキストをここに書いてみてください。') // デフォルト値をチェック
+      .should('have.value', '引算されるテキストをここに書いてみてください。') // デフォルト値をチェック
       .clear()
       .type('増井の変換')
       .should('have.value', '増井の変換') // 手入力をチェック
     cy.get('#subtrahend')
-      .should('have.value', 'ここに引くテキストを書いてください。') // デフォルト値をチェック
+      .should('have.value', 'ここに引算するテキストを書いてください。') // デフォルト値をチェック
       .clear()
       .type('増井の')
       .should('have.value', '増井の') // 手入力をチェック
