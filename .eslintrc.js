@@ -17,6 +17,7 @@ module.exports = {
         "kuromoji": false,
 	"cy": false,
 	"describe": false,
-	"it": false
+	"it": false,
+	"TinySegmenter":false
     }
 }
