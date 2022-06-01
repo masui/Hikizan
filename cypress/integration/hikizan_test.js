@@ -32,7 +32,7 @@ describe('Hikizan.orgのテスト', () => {
 
     cy.get('#minuend')
       .clear()
-      .type('増井xyzミッション')
+      .type('増井 xyzミッション')
     cy.get('#subtrahend')
       .invoke('val', gictionary.data) // テキストをペースト
       .should('have.value', gictionary.data)
