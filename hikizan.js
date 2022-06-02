@@ -9,10 +9,11 @@ function run () {
   difference.on('click', () => {
     $('#difference').css('background-color', '#eee')
     const a = {}
-    TinySegmenter(minuend.val()).forEach(word => {
+    var segmenter = new TinySegmenter();
+    segmenter.segment(minuend.val()).forEach(word => {
       a[word] = 1
     })
-    TinySegmenter(subtrahend.val()).forEach(word => {
+    segmenter.segment(subtrahend.val()).forEach(word => {
       delete a[word]
     })
     delete a['*']

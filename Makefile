@@ -9,7 +9,7 @@ get:
 	wget -q -r -O index.html https://scrapbox.io/api/code/Hikizan/index.html/index.html
 	wget -q -r -O hikizan.css https://scrapbox.io/api/code/Hikizan/hikizan.css/hikizan.css
 	wget -q -r -O hikizan.js https://scrapbox.io/api/code/Hikizan/hikizan.js/hikizan.js
-	wget -q -r -O TinySegmenter.js https://scrapbox.io/api/code/Hikizan/TinySegmenter.js/TinySegmenter.js
+	wget -q -r -O tiny_segmenter-0.2.js https://scrapbox.io/api/code/Hikizan/tiny_segmenter-0.2.js/tiny_segmenter-0.2.js
 	wget -q -r -O README.md https://scrapbox.io/api/code/Hikizan/README.md/README.md
 	wget -q -r -O cypress/integration/hikizan_test.js https://scrapbox.io/api/code/Hikizan/Test/hikizan_test.js
 	wget -q -r -O data/Makefile https://scrapbox.io/api/code/Hikizan/Data/Makefile
