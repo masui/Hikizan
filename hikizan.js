@@ -9,7 +9,7 @@ function run () {
   difference.on('click', () => {
     $('#difference').css('background-color', '#eee')
     const a = {}
-    var segmenter = new TinySegmenter();
+    const segmenter = new TinySegmenter()
     segmenter.segment(minuend.val()).forEach(word => {
       a[word] = 1
     })
