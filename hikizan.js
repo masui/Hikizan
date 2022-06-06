@@ -10,12 +10,12 @@ function run () {
     $('#difference').css('background-color', '#eee')
     const a = {}
     const segmenter = new TinySegmenter()
-    segmenter.segment(minuend.val()).forEach(word => {
+    for (const word of segmenter.segment(minuend.val())) {
       a[word] = 1
-    })
-    segmenter.segment(subtrahend.val()).forEach(word => {
+    }
+    for (const word of segmenter.segment(subtrahend.val())) {
       delete a[word]
-    })
+    }
     delete a['*']
     delete a[' ']
     delete a['\n']
