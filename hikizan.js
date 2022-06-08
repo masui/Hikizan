@@ -10,34 +10,29 @@ function run () {
     $('#difference').css('background-color', '#eee')
     const a = {}
     const segmenter = new TinySegmenter()
-  
+
     let s = minuend.val()
-    
-    function replacer1(match) {
-        a[match] = 1
-        return(' ')
+    // 数字の並びをTinySegmenterから除く
+    while (s.match(/\d+/)) {
+      s = s.replace(/\d+/, (w) => {
+        a[w] = 1
+        return ' '
+      })
     }
-    while(s.match(/\d\d+/)){
-        s = s.replace(/\d\d+/,replacer1)
-    }
-    
     for (const word of segmenter.segment(s)) {
       a[word] = 1
     }
-    
+
     s = subtrahend.val()
-    function replacer2(match) {
-        delete a[match]
-        return(' ')
+    while (s.match(/\d+/)) {
+      s = s.replace(/\d+/, (w) => {
+        delete a[w]
+        return ' '
+      })
     }
-    while(s.match(/\d\d+/)){
-        s = s.replace(/\d\d+/,replacer2)
-    }
-    
     for (const word of segmenter.segment(s)) {
       delete a[word]
     }
-    
     delete a['*']
     delete a[' ']
     delete a['\n']
