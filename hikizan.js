@@ -19,8 +19,8 @@ function run () {
         return ' '
       })
     }
-    for (const word of segmenter.segment(s)) {
-      a[word] = 1
+    for (const w of segmenter.segment(s)) {
+      a[w] = 1
     }
 
     s = subtrahend.val()
@@ -30,8 +30,8 @@ function run () {
         return ' '
       })
     }
-    for (const word of segmenter.segment(s)) {
-      delete a[word]
+    for (const w of segmenter.segment(s)) {
+      delete a[w]
     }
     delete a['*']
     delete a[' ']
