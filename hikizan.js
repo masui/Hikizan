@@ -1,4 +1,3 @@
-
 var minuend, subtrahend, difference
 
 function diff(){
