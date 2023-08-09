@@ -1,3 +1,4 @@
+
 var minuend, subtrahend, difference
 
 function diff(){
@@ -7,24 +8,24 @@ function diff(){
     let s = minuend.val()
     // 数字の並びをTinySegmenterから除く
     while (s.match(/\d+/)) {
-	s = s.replace(/\d+/, (w) => {
+        s = s.replace(/\d+/, (w) => {
             a[w] = 1
             return ' '
-	})
+        })
     }
     for (const w of segmenter.segment(s)) {
-	a[w] = 1
+        a[w] = 1
     }
     
     s = subtrahend.val()
     while (s.match(/\d+/)) {
-	s = s.replace(/\d+/, (w) => {
+        s = s.replace(/\d+/, (w) => {
             delete a[w]
             return ' '
-	})
+        })
     }
     for (const w of segmenter.segment(s)) {
-	delete a[w]
+        delete a[w]
     }
     delete a['*']
     delete a[' ']
@@ -41,10 +42,10 @@ function run () {
     difference = $('#difference') // 減算結果(差分)を表示するtextarea
     
     $('#exchange').on('click',function(){
-	let v = minuend.val()
-	minuend.val(subtrahend.val())
-	subtrahend.val(v)
-	diff()
+        let v = minuend.val()
+        minuend.val(subtrahend.val())
+        subtrahend.val(v)
+        diff()
     })
     
     minuend.change(diff)
@@ -52,9 +53,9 @@ function run () {
     
     // 差分領域をクリックすると差分計算してリストを表示する
     difference.on('click', () => {
-	difference.css('background-color', '#eee')
-	diff()
-	difference.css('background-color', '#fff')
+        difference.css('background-color', '#eee')
+        diff()
+        difference.css('background-color', '#fff')
     })
 }
 
