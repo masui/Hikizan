@@ -56,6 +56,8 @@ function run () {
         diff()
         difference.css('background-color', '#fff')
     })
+
+    diff()
 }
 
 $(function () {
