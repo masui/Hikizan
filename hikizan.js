@@ -33,15 +33,13 @@ function diff(){
     delete a['\n']
     delete a['「']
     delete a['」']
-    //let results = Object.keys(a)
-    difference.val(Object.keys(a).join(', '))
+    difference.val(Object.keys(a).join(' '))
     delete b['*']
     delete b[' ']
     delete b['\n']
     delete b['「']
     delete b['」']
-    //results = Object.keys(b)
-    intersection.val(Object.keys(b).join(', '))
+    intersection.val(Object.keys(b).join(' '))
 }
 
 function run () {
