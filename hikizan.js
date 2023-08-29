@@ -1,7 +1,8 @@
-var minuend, subtrahend, difference
+var minuend, subtrahend, difference, intersection
 
 function diff(){
     const a = {}
+    const b = {} // 共通部分
     const segmenter = new TinySegmenter()
     
     let s = minuend.val()
@@ -24,6 +25,7 @@ function diff(){
         })
     }
     for (const w of segmenter.segment(s)) {
+	if(a[w]) b[w] = 1
         delete a[w]
     }
     delete a['*']
@@ -31,14 +33,22 @@ function diff(){
     delete a['\n']
     delete a['「']
     delete a['」']
-    const results = Object.keys(a)
-    difference.val(results.join(', '))
+    //let results = Object.keys(a)
+    difference.val(Object.keys(a).join(', '))
+    delete b['*']
+    delete b[' ']
+    delete b['\n']
+    delete b['「']
+    delete b['」']
+    //results = Object.keys(b)
+    intersection.val(Object.keys(b).join(', '))
 }
 
 function run () {
     minuend = $('#minuend') // 減算されるデータのtextarea
     subtrahend = $('#subtrahend') // 減算するデータのtextarea
     difference = $('#difference') // 減算結果(差分)を表示するtextarea
+    intersection = $('#intersection') // 共通部分を表示するtextarea
     
     $('#exchange').on('click',function(){
         let v = minuend.val()
