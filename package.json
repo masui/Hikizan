@@ -1,0 +1,24 @@
+{
+  "name": "hikizan",
+  "version": "1.0.0",
+  "description": "<h1>引算サービス</h1>",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masui/Hikizan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/masui/Hikizan/issues"
+  },
+  "homepage": "https://github.com/masui/Hikizan#readme",
+  "devDependencies": {
+    "cypress": "^15.13.0"
+  }
+}
