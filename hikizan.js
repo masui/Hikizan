@@ -20,12 +20,13 @@ function diff(){
     s = subtrahend.val()
     while (s.match(/\d+/)) {
         s = s.replace(/\d+/, (w) => {
+            if(a[w]) b[w] = 1
             delete a[w]
             return ' '
         })
     }
     for (const w of segmenter.segment(s)) {
-	if(a[w]) b[w] = 1
+        if(a[w]) b[w] = 1
         delete a[w]
     }
     delete a['*']
